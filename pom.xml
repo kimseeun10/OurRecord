@@ -5,13 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.6</version>
+		<version>2.7.15</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.record.main</groupId>
 	<artifactId>MyRecord</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MyRecord</name>
+	<packaging>war</packaging>	
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -19,18 +20,18 @@
 	<dependencies>
 
 		<!--sms-->
-		<dependency>
+<!--		<dependency>
 		  <groupId>net.nurigo</groupId>
 		  <artifactId>sdk</artifactId>
 		  <version>4.2.7</version>
-		</dependency>
+		</dependency>-->
 		
 		<!--json 라이브러리-->
-		<dependency>
+<!--		<dependency>
 		    <groupId>com.googlecode.json-simple</groupId>
 		    <artifactId>json-simple</artifactId>
 		    <version>1.1.1</version>
-		</dependency>	
+		</dependency>	-->
 
 		<!-- SpringBoot mailService -->
 	    <dependency>
@@ -69,13 +70,10 @@
 		    <artifactId>tomcat-embed-jasper</artifactId>
 		    <!-- 버전 삭제 -->
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+				
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
-		     <!-- 버전 삭제, 에러 발생시 버전 적용 -->
 		</dependency>
 
 		<dependency>
