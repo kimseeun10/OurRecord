@@ -3,8 +3,32 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.record.main.MemberDAO">
+<mapper namespace="com.record.main.member.MemberDAO">
 
+	<!-- 전체 회원 조회 -->
+	<select id="getMember" parameterType="com.record.main.member.MemberVO">	
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PW = #{pw}
+	</select>
 
+<!-- 	<resultMap type="MemberVO" id="getMemberResult">
+		<id column="USERNAME" property="username"/>
+		<result column="PASSWORD" property="password"/>
+		<result column="NAME" property="name"/>
+		<result column="EMAIL" property="email"/>
+		<result column="BIRTH" property="birth"/>
+		<result column="JOINDATE" property="joinDate"/>
+		<result column="ENABLED" property="enabled"/>
+		
+		<collection property="roleVOs" javaType="List" ofType="RoleVO">
+			<id column="ROLENUM" property="roleNum"/>
+			<result column="ROLENAME" property="roleName"/>	
+		</collection>
+	</resultMap> -->
+
+	<!-- 회원가입 add -->
+	<insert id="setJoin" parameterType="com.record.main.member.MemberVO">
+		INSERT INTO MEMBER 
+		VALUES(NULL, #{id}, #{pw}, #{email}, #{phone}, #{address}, NOW(), #{addressDetail})
+	</insert>
 
 </mapper>

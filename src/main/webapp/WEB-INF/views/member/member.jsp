@@ -361,35 +361,34 @@ body {
       <div class="col align-items-center flex-col sign-up">
         <div class="form-wrapper align-items-center">
           <div class="form sign-up">
+        <form action="join" method="POST">
             <div class="input-group">
               <i class='bx bxs-user'></i>
-              <input type="text" placeholder="아이디를 입력해주세요.">
+              <input type="text" placeholder="아이디를 입력해주세요." id="id" name="id">
             </div>
             <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
-              <input type="password" placeholder="비밀번호를 입력해주세요.">
+              <input type="password" placeholder="비밀번호를 입력해주세요." id="pw" name="pw">
             </div>
             <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
-              <input type="password" placeholder="비밀번호를 한 번 더 입력해주세요.">
+              <input type="password" placeholder="비밀번호를 한 번 더 입력해주세요." id="pwCheck" name="pwCheck">
             </div>
             <div class="input-group">
               <i class='bx bx-mail-send'></i>
-              <input type="email" placeholder="이메일을 입력해주세요.">
+              <input type="email" placeholder="이메일을 입력해주세요." id="email" name="email">
             </div>
             <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
-              <input type="password" placeholder="전화번호를 입력해주세요.">
+              <input type="password" placeholder="전화번호를 입력해주세요." id="phone" name="phone">
             </div>   
             <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
-              <input type="password" placeholder="주소를 입력해주세요.">
+              <input type="text" placeholder="주소를 입력해주세요." id="address" name="address">
+			  <input type="text" placeholder="상세주소를 입력해주세요." id="addressDetail" name="addressDetail">
             </div> 
-            <div class="input-group">
-              <i class='bx bxs-lock-alt'></i>
-              <input type="date" placeholder="생일을 입력헤주세요.">
-            </div>                                    
-            <button>
+                                   
+            <button type="submit">
               회원가입
             </button>
             <p>
@@ -400,6 +399,7 @@ body {
                 Login here
               </b>
             </p>
+         </form> 
           </div>
         </div>
       
@@ -408,17 +408,18 @@ body {
       <!-- SIGN IN -->
       <div class="col align-items-center flex-col sign-in">
         <div class="form-wrapper align-items-center">
+     <form action="login" method="POST"> 
           <div class="form sign-in">
             <div class="input-group">
             <a href="/"><img alt="" src="/resources/images/logo.png" style="width: 300px; height: 100px;"></a>
               <i class='bx bxs-user'></i>
-              <input type="text" placeholder="ID">
+              <input type="text" placeholder="ID" id="id" name="id">
             </div>
             <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
-              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Password" id="pw" name="pw">
             </div>
-            <button>
+            <button type="submit">
              Login
             </button>
             <p>
@@ -435,6 +436,7 @@ body {
               </b>
             </p>
           </div>
+    </form> 
         </div>
         <div class="form-wrapper">
     

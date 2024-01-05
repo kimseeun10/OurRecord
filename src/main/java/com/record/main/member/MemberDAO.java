@@ -10,5 +10,7 @@ public interface MemberDAO {
 	
 	// 회원가입 add
 	public int setJoin(MemberVO memberVO)throws Exception;
+
+	
 	
 }
