@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,7 +26,7 @@ public class MemberController {
 	public String setJoin(MemberVO memberVO)throws Exception{
 		int result = memberService.setJoin(memberVO);
 		
-		return "redirect:../";
+		return "redirect:member/member";
 	}
 	
 	
@@ -42,7 +41,7 @@ public class MemberController {
 			return "redirect:../";
 		}
 		
-		return "./member";
+		return "member/member";
 	}
 	
 	// 로그아웃
