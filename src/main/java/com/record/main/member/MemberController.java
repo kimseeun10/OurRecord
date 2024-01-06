@@ -26,7 +26,7 @@ public class MemberController {
 	public String setJoin(MemberVO memberVO)throws Exception{
 		int result = memberService.setJoin(memberVO);
 		
-		return "redirect:member/member";
+		return "redirect:./member";
 	}
 	
 	

@@ -20,4 +20,5 @@ public class MemberVO {
 	private String address;
 	private String addressDetail;
 	private Date joinDate;
+	private String name;
 }

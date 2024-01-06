@@ -28,7 +28,7 @@
 	<!-- 회원가입 add -->
 	<insert id="setJoin" parameterType="com.record.main.member.MemberVO">
 		INSERT INTO MEMBER 
-		VALUES(NULL, #{id}, #{pw}, #{email}, #{phone}, #{address}, #{addressDetail}, NOW())
+		VALUES(NULL, #{id}, #{pw}, #{email}, #{phone}, #{address}, #{addressDetail}, NOW(), #{name})
 	</insert>
 
 </mapper>

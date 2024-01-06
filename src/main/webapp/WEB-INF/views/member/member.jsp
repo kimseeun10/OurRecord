@@ -367,6 +367,10 @@ body {
               <input type="text" placeholder="아이디를 입력해주세요." id="id" name="id">
             </div>
             <div class="input-group">
+              <i class='bx bxs-user'></i>
+              <input type="text" placeholder="이름을 입력해주세요." id="name" name="name">
+            </div>            
+            <div class="input-group">
               <i class='bx bxs-lock-alt'></i>
               <input type="password" placeholder="비밀번호를 입력해주세요." id="pw" name="pw">
             </div>
