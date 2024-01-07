@@ -10,11 +10,13 @@
 			<li class=""><a href="/"> <img alt="" src="/resources/images/logo.png" style="width: 150px; height: 70px; margin-left: 300px;"> </a></li>
 			
 			<c:if test="${empty member}">			
-				<li style="float: right;"><a href="./member/member">로그인 / 회원가입</a></li>			
+				<li style="float: right;"><a href="./member/member">로그인 / 회원가입</a></li>	
+				<li style="float: right;"><a href="./notice/noticeList">공지사항</a></li>			
 			</c:if>
 			<c:if test="${not empty member}">			
 				<li style="float: right;"><a href="./member/logout">로그아웃</a></li>	
-				<li style="float: right;"><a href="./member/mypage">마이페이지</a></li>		
+				<li style="float: right;"><a href="./member/mypage">마이페이지</a></li>	
+				<li style="float: right;"><a href="./notice/noticeList">공지사항</a></li>	
 			</c:if>
 		</ul>
 	</nav>

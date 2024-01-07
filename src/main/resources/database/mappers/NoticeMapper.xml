@@ -5,6 +5,9 @@
 
 <mapper namespace="com.record.main.notice.NoticeDAO">
 
-
+<select id="getNoticeList" resultType="com.record.main.notice.NoticeVO">
+	SELECT * FROM NOTICE 
+	ORDER BY DESC
+</select>
 
 </mapper>
