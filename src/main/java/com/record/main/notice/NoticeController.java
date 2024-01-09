@@ -23,4 +23,14 @@ public class NoticeController {
 		return "notice/noticeList";
 	}
 	
+	@GetMapping("noticeDetail")
+	public String noticeDetail(NoticeVO noticeVO, Model model)throws Exception{
+		noticeVO = noticeService.noticeDetail(noticeVO);
+		noticeService.hitUpdate(noticeVO);
+				
+		model.addAttribute("vo", noticeVO);
+		
+		return "notice/noticeDetail";
+	}
+	
 }

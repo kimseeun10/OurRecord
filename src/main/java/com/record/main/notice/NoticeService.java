@@ -15,4 +15,11 @@ public class NoticeService {
 		return noticeDAO.getNoticeList();
 	}
 	
+	public NoticeVO noticeDetail(NoticeVO noticeVO) throws Exception{
+		return noticeDAO.noticeDetail(noticeVO);
+	}
+	
+	public int hitUpdate(NoticeVO noticeVO)throws Exception{
+		return noticeDAO.hitUpdate(noticeVO);
+	}
 }

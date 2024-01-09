@@ -5,11 +5,24 @@
 
 <mapper namespace="com.record.main.notice.NoticeDAO">
 
-<select id="getNoticeList" resultType="com.record.main.notice.NoticeVO">
-	SELECT N.*, M.* 
-	FROM NOTICE N INNER JOIN MEMBER M
-	ON N.USERNO = M.USERNO
-	ORDER BY NOTICENO DESC
-</select>
+	<select id="getNoticeList" resultType="com.record.main.notice.NoticeVO">
+		SELECT N.*, M.* 
+		FROM NOTICE N INNER JOIN MEMBER M
+		ON N.USERNO = M.USERNO
+		ORDER BY NOTICENO DESC
+	</select>
+
+	<select id="noticeDetail" resultType="com.record.main.notice.NoticeVO">
+		SELECT N.*, M.name
+		FROM NOTICE N INNER JOIN MEMBER M
+		ON N.USERNO = M.USERNO
+		WHERE N.NOTICENO = #{noticeNo}
+	</select>
+
+	<update id="hitUpdate">
+		UPDATE NOTICE 
+		SET HIT = #{hit} + 1
+		WHERE NOTICENO = #{noticeNo}
+	</update>
 
 </mapper>
