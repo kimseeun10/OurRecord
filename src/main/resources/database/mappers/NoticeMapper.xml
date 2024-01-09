@@ -6,8 +6,10 @@
 <mapper namespace="com.record.main.notice.NoticeDAO">
 
 <select id="getNoticeList" resultType="com.record.main.notice.NoticeVO">
-	SELECT * FROM NOTICE 
-	ORDER BY DESC
+	SELECT N.*, M.* 
+	FROM NOTICE N INNER JOIN MEMBER M
+	ON N.USERNO = M.USERNO
+	ORDER BY NOTICENO DESC
 </select>
 
 </mapper>

@@ -13,7 +13,6 @@
 			<thead style="height: 70px;">
 				<tr>
 					<th style="width: 7%;">번호</th>
-					<th style="width: 10%;">분류</th>
 					<th style="width: 55%;">제목</th>
 					<th style="width: 10%">작성자</th>
 					<th style="width: 10%">작성일</th>
@@ -24,10 +23,14 @@
 			<c:forEach items="${list}" var="vo">
 				<tr>
 					<td><a href="./noticeDetail?noticeNo=${vo.noticeNo}" style="color: #697a8d;">${vo.noticeNo}</a></td>
-					<td>${vo.important}</td>
 					<td><a href="./noticeDetail?noticeNo=${vo.noticeNo}" style="color: #697a8d;">${vo.title}</a></td>
-					<td>${vo.empName}</td>
-					<td>${vo.createDate}</td>
+					<td>${vo.name}</td>
+					<c:if test="${empty vo.updateDate}">
+						<td>${vo.uploadDate}</td>
+					</c:if>
+					<c:if test="${not empty vo.updateDate}">
+						<td>${vo.updateDate}</td>
+					</c:if>
 					<td>${vo.hit}</td>
 				</tr>
 			</c:forEach>
