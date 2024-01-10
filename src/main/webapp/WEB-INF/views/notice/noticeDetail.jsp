@@ -35,6 +35,9 @@
 		<div class="mb-3">
 			<label for="contents" class="form-label"></label>
 			<div class="card-text" style="height: auto;">${vo.contents}</div>
-		</div>	
+		</div>
+		
+	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}">수정</a>		
+	<a href="./noticeDelete?noticeNo=${vo.noticeNo}">삭제</a>
 </body>
 </html>

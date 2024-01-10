@@ -29,4 +29,17 @@
 		INSERT INTO NOTICE 
 		VALUES(null, #{title}, #{contents}, NOW(), 0, #{userNo}, null)
 	</insert>
+	
+	<update id="noticeUpdate" parameterType="com.record.main.notice.NoticeVO">
+		UPDATE NOTICE SET
+			TITLE = #{title},
+			UPDATEDATE = NOW(),
+			CONTENTS = #{contents}
+		WHERE NOTICENO = #{noticeNo}			
+	</update>	
+	
+	<delete id="noticeDelete" parameterType="com.record.main.notice.NoticeVO">
+		DELETE FROM NOTICE WHERE NOTICENO = #{noticeNo}
+	</delete>
+	
 </mapper>
