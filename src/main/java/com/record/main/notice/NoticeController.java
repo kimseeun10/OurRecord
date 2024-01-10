@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/notice/*")
@@ -33,4 +35,17 @@ public class NoticeController {
 		return "notice/noticeDetail";
 	}
 	
+	@GetMapping("noticeAdd")
+	public String noticeAdd()throws Exception{
+		
+		return "notice/noticeAdd";
+	}
+	
+	
+	@PostMapping("noticeAdd")
+	public String noticeAdd(NoticeVO noticeVO, MultipartFile[] files)throws Exception{
+		int result = noticeService.noticeAdd(noticeVO);
+		
+		return "redirect:./noticeList";
+	}
 }

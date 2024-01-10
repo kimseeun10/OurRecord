@@ -22,4 +22,8 @@ public class NoticeService {
 	public int hitUpdate(NoticeVO noticeVO)throws Exception{
 		return noticeDAO.hitUpdate(noticeVO);
 	}
+	
+	public int noticeAdd(NoticeVO noticeVO) throws Exception{
+		return noticeDAO.noticeAdd(noticeVO);
+	}
 }

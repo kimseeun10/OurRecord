@@ -37,5 +37,7 @@
 		</tbody>
 
 	</table>
+	
+	<a href="./noticeAdd">글 작성</a>
 </body>
 </html>

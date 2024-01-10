@@ -24,5 +24,9 @@
 		SET HIT = #{hit} + 1
 		WHERE NOTICENO = #{noticeNo}
 	</update>
-
+	
+	<insert id="noticeAdd" parameterType="com.record.main.notice.NoticeVO">
+		INSERT INTO NOTICE 
+		VALUES(null, #{title}, #{contents}, NOW(), 0, #{userNo}, null)
+	</insert>
 </mapper>
