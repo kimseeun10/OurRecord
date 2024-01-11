@@ -430,6 +430,8 @@ body {
             <button type="submit">
              Login
             </button>
+            <br><br>
+            <a href="./naverLogin"><img height="40" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
             <p>
               <b>
                 Forgot password?
