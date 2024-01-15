@@ -21,9 +21,9 @@ public class MemberService {
 			return loginVO;
 		}
 		
-		if(passwordEncoder.matches(memberVO.getPw(), loginVO.getPw())) {
-	        return loginVO;
-	    }
+		if(loginVO.getPw().equals(memberVO.getPw())) {
+			return loginVO;
+		}
 		
 		return null;
 	}
