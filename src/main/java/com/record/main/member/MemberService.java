@@ -1,6 +1,7 @@
 package com.record.main.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -8,6 +9,9 @@ public class MemberService {
 
 	@Autowired
 	private MemberDAO memberDAO;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	//로그인
 	public MemberVO getLogin(MemberVO memberVO)throws Exception{
@@ -17,9 +21,9 @@ public class MemberService {
 			return loginVO;
 		}
 		
-		if(loginVO.getPw().equals(memberVO.getPw())) {
-			return loginVO;
-		}
+		if(passwordEncoder.matches(memberVO.getPw(), loginVO.getPw())) {
+	        return loginVO;
+	    }
 		
 		return null;
 	}
@@ -27,6 +31,8 @@ public class MemberService {
 	//회원가입
 
 	public int setJoin(MemberVO memberVO)throws Exception{
+		String pw = memberVO.getPw();
+		memberVO.setPw(passwordEncoder.encode(pw));		
 		int result = memberDAO.setJoin(memberVO);
 		
 		return result;
