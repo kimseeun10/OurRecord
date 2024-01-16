@@ -32,7 +32,7 @@ public class MemberService {
 
 	public int setJoin(MemberVO memberVO)throws Exception{
 		String pw = memberVO.getPw();
-		memberVO.setPw(passwordEncoder.encode(pw));		
+		memberVO.setPw(passwordEncoder.encode(pw));		// 비밀번호 암호화
 		int result = memberDAO.setJoin(memberVO);
 		
 		return result;
