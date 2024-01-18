@@ -50,6 +50,11 @@
 		<br><br>
 	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}">수정</a>		
 	<a href="./noticeDelete?noticeNo=${vo.noticeNo}">삭제</a>
+	<br><br><br>
+	<input type="text" readonly="readonly" value="이전글 ${vo.noticeNo-1}" style="border: none;"><a href="./noticeDetail?noticeNo=${vo.noticeNo-1}">${vo.title}</a>
+	<br>
+	<input type="text" readonly="readonly" value="다음글 ${vo.noticeNo+1}" style="border: none;"><a href="./noticeDetail?noticeNo=${vo.noticeNo+1}">${vo.title}</a>
+	
 	</section>
 </body>
 </html>
