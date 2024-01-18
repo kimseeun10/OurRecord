@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.record.main.util.Pager;
+
 
 @Controller
 @RequestMapping("/notice/*")
@@ -21,9 +23,10 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@GetMapping("noticeList")
-	public String getNoticeList(Model model)throws Exception{
-		List<NoticeVO> ar = noticeService.getNoticeList();
+	public String getNoticeList(Model model, Pager pager)throws Exception{
+		List<NoticeVO> ar = noticeService.getNoticeList(pager);
 		model.addAttribute("list", ar);
+		model.addAttribute("pager", pager);
 		
 		return "notice/noticeList";
 	}

@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+.wrap {width: 1200px; height:auto; margin-left: 20%; margin-top: 100px;}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
@@ -15,6 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+<section id="container" class="wrap">
 	<h1>공지사항</h1>
 		<form action="noticeAdd" method="post" enctype="multipart/form-data">
 
@@ -37,5 +41,6 @@
 					</div>									  
 						<button class="btn btn-primary" id="addBtn" style="float: right;">작성완료</button>
 		   </form>
+	</section>	   
 </body>
 </html>

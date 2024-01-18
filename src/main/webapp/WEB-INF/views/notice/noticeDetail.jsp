@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+.wrap {width: 1200px; height:auto; margin-left: 20%; margin-top: 100px;}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
@@ -15,7 +18,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-	<h1>공지사항</h1>
+<section id="container" class="wrap">
+	<h1>공지사항</h1><br>
 	<table class="table">						
 		<tr>
 			<th style="width:10%;">Title</th>
@@ -43,8 +47,9 @@
 			<label for="contents" class="form-label"></label>
 			<div class="card-text" style="height: auto;">${vo.contents}</div>
 		</div>
-		
+		<br><br>
 	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}">수정</a>		
 	<a href="./noticeDelete?noticeNo=${vo.noticeNo}">삭제</a>
+	</section>
 </body>
 </html>

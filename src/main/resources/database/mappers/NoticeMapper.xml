@@ -5,11 +5,34 @@
 
 <mapper namespace="com.record.main.notice.NoticeDAO">
 
+	<sql id="forPager">
+	  	<choose>
+	  		<when test="kind == 'title'">
+	  			title
+	  		</when>
+	  		<otherwise>
+	 			contents
+	  		</otherwise>
+	  	</choose>
+	  </sql>
+
+	<select id="getTotal" parameterType="com.record.main.util.Pager" resultType="Long">
+		<bind name="pattern" value="'%'+_parameter.getSearch()+'%'"/>
+		SELECT COUNT(NOTICENO) 
+		FROM NOTICE 
+		WHERE <include refid="forPager"></include>
+	  	Like #{pattern}
+	</select>
+
 	<select id="getNoticeList" resultType="com.record.main.notice.NoticeVO">
 		SELECT N.*, M.* 
 		FROM NOTICE N INNER JOIN MEMBER M
 		ON N.USERNO = M.USERNO
-		ORDER BY NOTICENO DESC
+		WHERE
+			<include refid="forPager"></include>
+			LIKE CONCAT('%', #{search}, '%')
+			ORDER BY NOTICENO DESC
+			LIMIT #{startRow}, #{lastRow}
 	</select>
 
 	<select id="noticeDetail" resultType="com.record.main.notice.NoticeVO">

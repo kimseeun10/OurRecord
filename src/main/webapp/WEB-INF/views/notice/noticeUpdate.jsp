@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+.wrap {width: 1200px; height:auto; margin-left: 20%; margin-top: 100px;}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
@@ -15,7 +18,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-	<h1>공지사항</h1>
+<section id="container" class="wrap">
+	<h1>공지사항</h1><br>
 		<form action="noticeUpdate" method="post" enctype="multipart/form-data">
 			<input type="hidden" id="noticeNo" name="noticeNo" value="${vo.noticeNo}">
 		    <div class="mb-3">
@@ -34,8 +38,10 @@
 				<label for="contents" class="form-label" style="font-size: 15px;">Files</label>
 					<div class="mb-3">
 						<input type="file" class="form-control" name="files">
-					</div>									  
+					</div>
+					<br><br>									  
 						<button class="btn btn-primary" id="updateBtn" style="float: right;">작성완료</button>
 		   </form>
+	</section>	   
 </body>
 </html>
