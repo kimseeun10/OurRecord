@@ -37,7 +37,14 @@
 	
 	<!-- 게시판 상세페이지에서 이전 다음글 -->
 	<select id="movePage" parameterType="Long" resultType="com.record.main.notice.NoticeVO">
-
+        SELECT 
+            N.*,
+            (SELECT NOTICENO FROM NOTICE WHERE NOTICENO &lt; N.NOTICENO ORDER BY NOTICENO DESC LIMIT 1) AS last,
+            (SELECT TITLE FROM NOTICE WHERE NOTICENO &lt; N.NOTICENO ORDER BY NOTICENO DESC LIMIT 1) AS lasttitle,
+            (SELECT NOTICENO FROM NOTICE WHERE NOTICENO &gt; N.NOTICENO ORDER BY NOTICENO ASC LIMIT 1) AS next,
+            (SELECT TITLE FROM NOTICE WHERE NOTICENO &gt; N.NOTICENO ORDER BY NOTICENO ASC LIMIT 1) AS nexttitle
+        FROM NOTICE N
+        WHERE NOTICENO = #{noticeNo}
 	</select>
 
 	<select id="noticeDetail" resultType="com.record.main.notice.NoticeVO">

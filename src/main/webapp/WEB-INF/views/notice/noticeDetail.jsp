@@ -6,6 +6,7 @@
 <head>
 <style type="text/css">
 .wrap {width: 1200px; height:auto; margin-left: 20%; margin-top: 100px;}
+
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -19,7 +20,7 @@
 </head>
 <body>
 <section id="container" class="wrap">
-	<h1>공지사항</h1><br>
+	<a href="./noticeList" style="text-decoration: none;"><h1>공지사항</h1></a><br>
 	<table class="table">						
 		<tr>
 			<th style="width:10%;">Title</th>
@@ -43,26 +44,14 @@
 			<td style="width:85%; text-align: center; font-size: 15px;">${vo.hit+1}</td>
 		</tr>
 	</table>
-		<div class="mb-3">
+		<div class="mb-5">
 			<label for="contents" class="form-label"></label>
 			<div class="card-text" style="height: auto;">${vo.contents}</div>
 		</div>
 		<br><br>
-	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}">수정</a>		
-	<a href="./noticeDelete?noticeNo=${vo.noticeNo}">삭제</a>
-	<br><br><br>
+
 
 	<div class="list-group">
-	    <a href="./noticeDetail?noticeNo=${move.next}" class="list-group-item list-group-item-action <c:if test="${empty move.nexttitle}">disabled</c:if>">
-	        <span style="font-weight: bold;">다음글</span> │ <c:choose>
-	            <c:when test="${empty move.nexttitle}">
-	                다음글이 없습니다.
-	            </c:when>
-	            <c:otherwise>
-	                <span style="color: blue;">${move.nexttitle}</span>
-	            </c:otherwise>
-	        </c:choose>
-	    </a>
 	    <a href="./noticeDetail?noticeNo=${move.last}" class="list-group-item list-group-item-action <c:if test="${empty move.lasttitle}">disabled</c:if>">
 	        <span style="font-weight: bold;">이전글</span> │ <c:choose>
 	            <c:when test="${empty move.lasttitle}">
@@ -73,8 +62,20 @@
 	            </c:otherwise>
 	        </c:choose>
 	    </a>
+	    <a href="./noticeDetail?noticeNo=${move.next}" class="list-group-item list-group-item-action <c:if test="${empty move.nexttitle}">disabled</c:if>">
+	        <span style="font-weight: bold;">다음글</span> │ <c:choose>
+	            <c:when test="${empty move.nexttitle}">
+	                다음글이 없습니다.
+	            </c:when>
+	            <c:otherwise>
+	                <span style="color: blue;">${move.nexttitle}</span>
+	            </c:otherwise>
+	        </c:choose>
+	    </a>
 	</div>
-
+	<br><br>
+	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}" style="float: right;" class="btn btn-primary">수정</a>		
+	<a href="./noticeDelete?noticeNo=${vo.noticeNo}" style="float: right;" class="btn btn-danger">삭제</a>
 	</section>
 </body>
 </html>

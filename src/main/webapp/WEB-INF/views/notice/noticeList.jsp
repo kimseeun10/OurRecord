@@ -6,6 +6,8 @@
 <head>
 <style type="text/css">
 .wrap {width: 1200px; height:auto; margin-left: 20%; margin-top: 100px;}
+
+.wrap a {text-decoration: none;}
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -18,6 +20,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="/">Navbar</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">First</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Second</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/member/member">Third</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <section id="container" class="wrap">
 	<h1>공지사항</h1>
 		<table class="table" style="text-align: center; width:auto; margin: 20px; ">
@@ -92,7 +114,7 @@
 							</nav>
     					</div>
 	
-	<a href="./noticeAdd">글 작성</a>
+	<a href="./noticeAdd" class="btn btn-primary" style="float: right; margin-right: 16%;">글 작성</a>
 </section>	
 </body>
 </html>
