@@ -37,6 +37,7 @@ public class NoticeController {
 		noticeService.hitUpdate(noticeVO);
 				
 		model.addAttribute("vo", noticeVO);
+		model.addAttribute("move", noticeService.movePage(noticeVO.getNoticeNo()));
 		
 		return "notice/noticeDetail";
 	}

@@ -51,10 +51,30 @@
 	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}">수정</a>		
 	<a href="./noticeDelete?noticeNo=${vo.noticeNo}">삭제</a>
 	<br><br><br>
-	<input type="text" readonly="readonly" value="이전글 ${vo.noticeNo-1}" style="border: none;"><a href="./noticeDetail?noticeNo=${vo.noticeNo-1}">${vo.title}</a>
-	<br>
-	<input type="text" readonly="readonly" value="다음글 ${vo.noticeNo+1}" style="border: none;"><a href="./noticeDetail?noticeNo=${vo.noticeNo+1}">${vo.title}</a>
-	
+
+	<div class="list-group">
+	    <a href="./noticeDetail?noticeNo=${move.next}" class="list-group-item list-group-item-action <c:if test="${empty move.nexttitle}">disabled</c:if>">
+	        <span style="font-weight: bold;">다음글</span> │ <c:choose>
+	            <c:when test="${empty move.nexttitle}">
+	                다음글이 없습니다.
+	            </c:when>
+	            <c:otherwise>
+	                <span style="color: blue;">${move.nexttitle}</span>
+	            </c:otherwise>
+	        </c:choose>
+	    </a>
+	    <a href="./noticeDetail?noticeNo=${move.last}" class="list-group-item list-group-item-action <c:if test="${empty move.lasttitle}">disabled</c:if>">
+	        <span style="font-weight: bold;">이전글</span> │ <c:choose>
+	            <c:when test="${empty move.lasttitle}">
+	                이전글이 없습니다.
+	            </c:when>
+	            <c:otherwise>
+	                <span style="color: blue;">${move.lasttitle}</span>
+	            </c:otherwise>
+	        </c:choose>
+	    </a>
+	</div>
+
 	</section>
 </body>
 </html>

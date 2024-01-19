@@ -18,6 +18,10 @@ public class NoticeVO {
 	private int hit;
 	private Long userNo;
 	private String name;
+	private Long last;
+	private Long next;
+	private String lasttitle;
+	private String nexttitle;
 	
 	
 }

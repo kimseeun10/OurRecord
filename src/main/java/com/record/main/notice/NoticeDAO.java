@@ -15,6 +15,8 @@ public interface NoticeDAO {
 	
 	public int noticeAdd(NoticeVO noticeVO) throws Exception;
 	
+	public NoticeVO movePage(Long noticeNo)throws Exception;
+	
 	public NoticeVO noticeDetail(NoticeVO noticeVO) throws Exception;
 	
 	public int noticeUpdate(NoticeVO noticeVO) throws Exception;

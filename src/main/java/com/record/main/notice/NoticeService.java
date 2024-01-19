@@ -25,6 +25,10 @@ public class NoticeService {
 		return noticeDAO.getNoticeList(pager);
 	}
 	
+	public NoticeVO movePage(Long noticeNo)throws Exception{
+		return noticeDAO.movePage(noticeNo);
+	}
+	
 	public NoticeVO noticeDetail(NoticeVO noticeVO) throws Exception{
 		return noticeDAO.noticeDetail(noticeVO);
 	}

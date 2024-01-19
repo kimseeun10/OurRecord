@@ -34,6 +34,11 @@
 			ORDER BY NOTICENO DESC
 			LIMIT #{startRow}, #{lastRow}
 	</select>
+	
+	<!-- 게시판 상세페이지에서 이전 다음글 -->
+	<select id="movePage" parameterType="Long" resultType="com.record.main.notice.NoticeVO">
+
+	</select>
 
 	<select id="noticeDetail" resultType="com.record.main.notice.NoticeVO">
 		SELECT N.*, M.name
