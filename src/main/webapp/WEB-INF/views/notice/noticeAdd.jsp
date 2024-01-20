@@ -18,6 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+<c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
 	<h1>공지사항</h1>
 		<form action="noticeAdd" method="post" enctype="multipart/form-data">

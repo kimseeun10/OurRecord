@@ -20,26 +20,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-  <a class="navbar-brand" href="/">Navbar</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading1">First</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading2">Second</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/member/member">Third</a></li>
-        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
 	<h1>공지사항</h1>
 		<table class="table" style="text-align: center; width:auto; margin: 20px; ">

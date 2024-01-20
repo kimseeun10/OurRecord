@@ -15,35 +15,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-		<!-- Header -->
-	<nav id="nav" style="background-color: darkgreen;">
-		<ul style="height: 50px;">
-			<li style="float: left;"><a href="left-sidebar.html">Left Sidebar</a></li>
-			<li style="float: left;"><a href="right-sidebar.html">Right Sidebar</a></li>
-			<li style="float: left;"><a href="no-sidebar.html">No Sidebar</a></li>
-			<a href="/"> <img alt="" src="/resources/images/logo.png" style="width: 150px; height: 60px; margin-left: 20%;"> </a>
-			<c:if test="${empty member}">			
-				<li style="float: right;"><a href="./member/member">로그인 / 회원가입</a></li>	
-				<li style="float: right;"><a href="./notice/noticeList">공지사항</a></li>			
-			</c:if>
-			<c:if test="${not empty member}">			
-				<li style="float: right;"><a href="./member/logout">로그아웃</a></li>	
-				<li style="float: right;"><a href="./member/mypage">마이페이지</a></li>	
-				<li style="float: right;"><a href="./notice/noticeList">공지사항</a></li>	
-			</c:if>
-		</ul>
-	</nav>
-		<div id="header">
-			<div class=""> 
-				
-				<!-- Logo -->
-				<div id="logo">
-					<h2><a href="#">Our Record</a></h2>
-				</div>
-				
-				<!-- Nav -->
-				</div>
-		</div>
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="/"> <img alt="" src="/resources/images/logo.png" style="width: 140px; height: 55px;"> </a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">First</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/notice/noticeList">공지사항</a>
+    </li>
+  <c:if test="${empty member}">	  
+      <a class="nav-link"  href="/member/member" >로그인 / 회원가입</a>
+  </c:if>
+  <c:if test="${not empty member}">	  
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">${member.name} 님</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/member/mypage">마이페이지</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="/member/logout">로그아웃</a></li>
+      </ul>
+    </li>
+  </c:if>      
+  </ul>
+</nav>
  
 </body>
 </html>
