@@ -12,24 +12,38 @@
 <body>
 	<c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 		<!-- Main -->
-		<div id="main">
 			<div class="container">
 				<div class="row"> 
 					
 					<!-- Content -->
-					<div id="content" class="8u skel-cell-important">
-						<section>
-							<header><h2>Welcome to Our Record!</h2>
-								<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
-							</header><a href="#" class="image full"><img src="images/pic07.jpg" alt="" width="700" height="260"></a>
-							<p>This is <strong>Our Record</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) – just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor.</p>
-						</section></div>
+					<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+					  <div class="carousel-inner">
+					    <div class="carousel-item active" data-bs-interval="10000">
+					      <img src="/resources/images/read1.jfif" class="d-block w-100" alt="..." style="height: 800px;">
+					    </div>
+					    <div class="carousel-item" data-bs-interval="2000">
+					      <img src="/resources/images/read2.png" class="d-block w-100" alt="...">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="/resources/images/read3.jpg" class="d-block w-100" alt="...">
+					    </div>
+					  </div>
+					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Previous</span>
+					  </button>
+					  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Next</span>
+					  </button>
+					</div>
 					
 					<!-- Sidebar -->
 					<div id="sidebar" class="4u">
-						<section><header><h2>Pellentesque vulputate</h2>
-							</header><ul class="style"><li>
+						<section>
+							<header>
+							</header>
+								<ul class="style"><li>
 									<p class="posted">August 11, 2002  |  (10 )  Comments</p>
 									<img src="images/pic04.jpg" alt="" width="70" height="70"><p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
 								</li>
@@ -41,10 +55,10 @@
 									<p class="posted">August 11, 2002  |  (10 )  Comments</p>
 									<img src="images/pic06.jpg" alt="" width="70" height="70"><p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
 								</li>
-							</ul></section></div>
+							</ul></section>
+					</div>
 				</div>
 			</div>
-		</div>
 
 <c:import url="/WEB-INF/views/layout/footer.jsp"></c:import>
 </body>
