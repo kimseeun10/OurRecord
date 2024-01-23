@@ -52,4 +52,12 @@ public class MemberController {
 		
 		return"redirect:../";
 	}
+	
+	// 마이페이지
+	
+	@GetMapping("mypage")
+	public String mypage(MemberVO memberVO)throws Exception{
+		
+		return "member/mypage";
+	}
 }
