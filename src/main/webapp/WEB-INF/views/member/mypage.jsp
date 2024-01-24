@@ -8,5 +8,7 @@
 </head>
 <body>
 
+	<h1>${member.name}님의 마이페이지</h1>
+
 </body>
 </html>
