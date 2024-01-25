@@ -9,9 +9,7 @@ public class MemberService {
 
 	@Autowired
 	private MemberDAO memberDAO;
-	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+
 	
 	//로그인
 	public MemberVO getLogin(MemberVO memberVO)throws Exception{
@@ -32,7 +30,7 @@ public class MemberService {
 
 	public int setJoin(MemberVO memberVO)throws Exception{
 		String pw = memberVO.getPw();
-		memberVO.setPw(passwordEncoder.encode(pw));		// 비밀번호 암호화
+//		memberVO.setPw(passwordEncoder.encode(pw));		// 비밀번호 암호화
 		int result = memberDAO.setJoin(memberVO);
 		
 		return result;

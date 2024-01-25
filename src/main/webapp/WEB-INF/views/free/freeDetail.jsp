@@ -5,7 +5,7 @@
 <html>
 <head>
 <style type="text/css">
-.wrap {width: 1300px; height:auto; margin-left: 16%; margin-top: 100px;}
+.wrap {width: 1300px; height:auto; margin-left: 17%; margin-top: 100px;}
 
 </style>
 <meta charset="UTF-8">

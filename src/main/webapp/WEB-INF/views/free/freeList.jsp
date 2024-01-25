@@ -27,17 +27,19 @@
 			<thead style="height: 70px;">
 				<tr>
 					<th style="width: 7%;">번호</th>
-					<th style="width: 55%;">제목</th>
-					<th style="width: 10%">작성자</th>
-					<th style="width: 10%">작성일</th>
-					<th style="width: 8%">조회수</th>
+					<th style="width: 10%;">카테고리</th>
+					<th style="width: 50%;">제목</th>
+					<th style="width: 8%">작성자</th>
+					<th style="width: 8%">작성일</th>
+					<th style="width: 7%">조회수</th>
 				</tr>
 		</thead>
 		<tbody style="height: 35px;">
 			<c:forEach items="${list}" var="vo">
 				<tr>
-					<td><a href="./noticeDetail?noticeNo=${vo.noticeNo}" style="color: #697a8d;">${vo.noticeNo}</a></td>
-					<td><a href="./noticeDetail?noticeNo=${vo.noticeNo}" style="color: #697a8d;">${vo.title}</a></td>
+					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeNum}</a></td>
+					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeTitle}</a></td>
+					<td>${vo.categoryName}</td>
 					<td>${vo.name}</td>
 					<c:if test="${empty vo.updateDate}">
 						<td>${vo.uploadDate}</td>
@@ -76,18 +78,18 @@
 									<c:if test="${pager.pre}">
 									<li class="page-item ${pager.pre?'':'disabled'}"><a
 										class="page-link"
-										href="./noticeList?page=${pager.startNum - 1}&kind=${pager.kind}&search=${pager.search}"
+										href="./freeList?page=${pager.startNum - 1}&kind=${pager.kind}&search=${pager.search}"
 										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 									</a></li>
 									</c:if>
 									<c:forEach begin="${pager.startNum}" end="${pager.lastNum}"
 										var="i">
 										<li class="page-item"><a class="page-link"
-											href="./noticeList?page=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a></li>
+											href="./freeList?page=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a></li>
 									</c:forEach>
 									<c:if test="${pager.next}">
 										<li class="page-item"><a class="page-link"
-											href="./noticeList?page=${pager.lastNum + 1}&kind=${pager.kind}&search=${pager.search}"
+											href="./freeList?page=${pager.lastNum + 1}&kind=${pager.kind}&search=${pager.search}"
 											aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 										</a></li>
 									</c:if>
@@ -95,7 +97,7 @@
 							</nav>
     					</div>
 	
-	<a href="./noticeAdd" class="btn btn-primary" style="float: right; margin-right: 16%;">글 작성</a>
+	<a href="./freeAdd" class="btn btn-primary" style="float: right; margin-right: 16%;">글 작성</a>
 </section>	
 </body>
 </html>
