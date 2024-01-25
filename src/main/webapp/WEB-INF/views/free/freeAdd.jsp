@@ -20,20 +20,23 @@
 <body>
 <c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
-	<h1>공지사항</h1>
-		<form action="noticeAdd" method="post" enctype="multipart/form-data">
-
-		    <div class="mb-3">
-			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
-			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요.">
-		    </div>
+	<h1>COMMUNITY</h1>
+		<form action="freeAdd" method="post" enctype="multipart/form-data">
+			<br>
 		    <div class="mb-3">
 			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Category</label>
 			 <input type="hidden" class="form-control" name="categoryNum" id="categoryNum">
 			 <select>
-			 	<option></option>
+			 	<option value="#">-----선 택-----</option>
+			 	<c:forEach items="${cate}" var="cate">
+			 		<option value="${cate.categoryNum}">${cate.categoryName}</option>
+			 	</c:forEach>
 			 </select>
 		    </div>		    
+		    <div class="mb-3">
+			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
+			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요.">
+		    </div>
 			<div class="mb-3">
 				<label for="name" class="form-label" style="font-size: 15px;">Writer</label>
 				<input type="hidden" class="form-control" name="userNo" id="userNo" value="${member.userNo}">

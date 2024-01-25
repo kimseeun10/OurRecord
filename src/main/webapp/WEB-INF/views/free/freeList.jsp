@@ -22,7 +22,7 @@
 <body>
 <c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
-	<h1>공지사항</h1>
+	<h1>COMMUNITY</h1>
 		<table class="table" style="text-align: center; width:1300px; margin: 20px; ">
 			<thead style="height: 70px;">
 				<tr>

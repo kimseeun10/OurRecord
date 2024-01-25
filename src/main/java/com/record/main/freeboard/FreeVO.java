@@ -21,6 +21,11 @@ public class FreeVO {
 	private String name;
 	private String categoryName;
 	
+	private Long last;
+	private Long next;
+	private String lasttitle;
+	private String nexttitle;
+	
 	
 	
 }

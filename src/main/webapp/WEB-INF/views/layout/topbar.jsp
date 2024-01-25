@@ -19,7 +19,7 @@
   <a class="navbar-brand" href="/"> <img alt="" src="/resources/images/logo.png" style="width: 140px; height: 55px;"> </a>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading1">First</a>
+      <a class="nav-link" href="/free/freeList">커뮤니티</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/notice/noticeList">공지사항</a>

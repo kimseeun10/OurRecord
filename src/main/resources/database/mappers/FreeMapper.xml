@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.record.main.freeboard.FreeDAO">
+
+	<sql id="forPager">
+	  	<choose>
+	  		<when test="kind == 'freeTitle'">
+	  			freeTitle
+	  		</when>
+	  		<otherwise>
+	 			freeContents
+	  		</otherwise>
+	  	</choose>
+	  </sql>
+
+	<select id="getTotal" parameterType="com.record.main.util.Pager" resultType="Long">
+		<bind name="pattern" value="'%'+_parameter.getSearch()+'%'"/>
+		SELECT COUNT(FREENUM) 
+		FROM FREE 
+		WHERE <include refid="forPager"></include>
+	  	Like #{pattern}
+	</select>
+
+	<select id="getFreeList" resultType="com.record.main.freeboard.FreeVO">
+		SELECT F.*, M.* 
+		FROM FREE F INNER JOIN MEMBER M
+		ON F.USERNO = M.USERNO
+		WHERE
+			<include refid="forPager"></include>
+			LIKE CONCAT('%', #{search}, '%')
+			ORDER BY FREENUM DESC
+			LIMIT #{startRow}, #{lastRow}
+	</select>
+	
+	<select id="getCategoryList" resultType="com.record.main.freeboard.FreeVO">
+		SELECT *
+		FROM CATEGORY 
+	</select>
+	
+	<!-- 게시판 상세페이지에서 이전 다음글 -->
+	<select id="movePage" parameterType="Long" resultType="com.record.main.freeboard.FreeVO">
+        SELECT 
+            F.*,
+            (SELECT FREENUM FROM FREE WHERE FREENUM &lt; F.FREENUM ORDER BY FREENUM DESC LIMIT 1) AS last,
+            (SELECT FREETITLE FROM FREE WHERE FREENUM &lt; F.FREENUM ORDER BY FREENUM DESC LIMIT 1) AS lasttitle,
+            (SELECT FREENUM FROM FREE WHERE FREENUM &gt; F.FREENUM ORDER BY FREENUM ASC LIMIT 1) AS next,
+            (SELECT FREETITLE FROM FREE WHERE FREENUM &gt; F.FREENUM ORDER BY FREENUM ASC LIMIT 1) AS nexttitle
+        FROM FREE F
+        WHERE FREENUM = #{freeNum}
+	</select>
+
+	<select id="freeDetail" resultType="com.record.main.freeboard.FreeVO">
+		SELECT F.*, M.name, C.*
+		FROM FREE F INNER JOIN MEMBER M
+		ON F.USERNO = M.USERNO
+		INNER JOIN CATEGORY C
+		ON F.CATEGORYNUM = C.CATECORYNUM
+		WHERE F.FREENUM = #{freeNum}
+	</select>
+
+	<update id="hitUpdate">
+		UPDATE FREE 
+		SET HIT = #{hit} + 1
+		WHERE FREENUM = #{freeNum}
+	</update>
+	
+	<insert id="freeAdd" parameterType="com.record.main.freeboard.FreeVO">
+		INSERT INTO FREE 
+		VALUES(null, #{categoryNum}, #{freeTitle}, #{userNo}, #{freeContents}, NOW(), null, 0)
+	</insert>
+	
+	<insert id="categoryAdd" parameterType="com.record.main.freeboard.FreeVO">
+		INSERT INTO CATEGORY
+		VALUES(null, #{categoryName})
+	</insert>
+	
+	<update id="freeUpdate" parameterType="com.record.main.freeboard.FreeVO">
+		UPDATE FREE SET
+			FREETITLE = #{freeTitle},
+			CATEGORYNUM = #{categoryNum},
+			UPDATEDATE = NOW(),
+			FREECONTENTS = #{freeContents}
+		WHERE FREENUM = #{freeNum}			
+	</update>	
+	
+	<delete id="freeDelete" parameterType="com.record.main.freeboard.FreeVO">
+		DELETE FROM FREE WHERE FREENUM = #{freeNum}
+	</delete>
+	
+</mapper>
