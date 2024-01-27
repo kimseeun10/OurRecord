@@ -21,11 +21,15 @@
 <body>
 <c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
-	<a href="./noticeList" style="text-decoration: none;"><h1>공지사항</h1></a><br>
-	<table class="table">						
+	<a href="./freeList" style="text-decoration: none;"><h1>COMMUNITY</h1></a><br>
+	<table class="table">		
+		<tr>
+			<th style="width:10%;">Category</th>
+			<td style="width:85%; text-align: center; font-size: 15px;">${vo.categoryName}</td>
+		</tr>					
 		<tr>
 			<th style="width:10%;">Title</th>
-			<td style="width:85%; text-align: center; font-size: 15px;">${vo.title}</td>
+			<td style="width:85%; text-align: center; font-size: 15px;">${vo.freeTitle}</td>
 		</tr>
 		<tr>
 			<th style="width:10%;">Writer</th>
@@ -34,10 +38,10 @@
 		 <tr>
 			<th style="width:10%;">Date</th>
 			<c:if test="${empty vo.updateDate}">
-				<td>${vo.uploadDate}</td>
+				<td style="width:85%; text-align: center; font-size: 15px;">${vo.uploadDate}</td>
 			</c:if>
 			<c:if test="${not empty vo.updateDate}">
-				<td>${vo.updateDate} (수정됨)</td>
+				<td style="width:85%; text-align: center; font-size: 15px;">${vo.updateDate} (수정됨)</td>
 			</c:if>			
 		</tr>
 		<tr>
@@ -46,14 +50,14 @@
 		</tr>
 	</table>
 		<div class="mb-5">
-			<label for="contents" class="form-label"></label>
-			<div class="card-text" style="height: auto;">${vo.contents}</div>
+			<label for="freeContents" class="form-label"></label>
+			<div class="card-text" style="height: auto;">${vo.freeContents}</div>
 		</div>
 		<br><br>
 
 
 	<div class="list-group">
-	    <a href="./noticeDetail?noticeNo=${move.last}" class="list-group-item list-group-item-action <c:if test="${empty move.lasttitle}">disabled</c:if>">
+	    <a href="./freeDetail?freeNum=${move.last}" class="list-group-item list-group-item-action <c:if test="${empty move.lasttitle}">disabled</c:if>">
 	        <span style="font-weight: bold;">이전글</span> │ <c:choose>
 	            <c:when test="${empty move.lasttitle}">
 	                이전글이 없습니다.
@@ -63,7 +67,7 @@
 	            </c:otherwise>
 	        </c:choose>
 	    </a>
-	    <a href="./noticeDetail?noticeNo=${move.next}" class="list-group-item list-group-item-action <c:if test="${empty move.nexttitle}">disabled</c:if>">
+	    <a href="./freeDetail?freeNum=${move.next}" class="list-group-item list-group-item-action <c:if test="${empty move.nexttitle}">disabled</c:if>">
 	        <span style="font-weight: bold;">다음글</span> │ <c:choose>
 	            <c:when test="${empty move.nexttitle}">
 	                다음글이 없습니다.
@@ -75,8 +79,8 @@
 	    </a>
 	</div>
 	<br><br>
-	<a href="./noticeUpdate?noticeNo=${vo.noticeNo}" style="float: right;" class="btn btn-primary">수정</a>		
-	<a href="./noticeDelete?noticeNo=${vo.noticeNo}" style="float: right;" class="btn btn-danger">삭제</a>
+	<a href="./freeUpdate?freeNum=${vo.freeNum}" style="float: right;" class="btn btn-primary">수정</a>		
+	<a href="./freeDelete?freeNum=${vo.freeNum}" style="float: right;" class="btn btn-danger">삭제</a>
 	</section>
 </body>
 </html>

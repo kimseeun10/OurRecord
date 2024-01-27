@@ -38,8 +38,8 @@
 			<c:forEach items="${list}" var="vo">
 				<tr>
 					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeNum}</a></td>
-					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeTitle}</a></td>
 					<td>${vo.categoryName}</td>
+					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeTitle}</a></td>
 					<td>${vo.name}</td>
 					<c:if test="${empty vo.updateDate}">
 						<td>${vo.uploadDate}</td>

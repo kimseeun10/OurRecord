@@ -33,7 +33,7 @@ public class FreeService {
 	}
 	
 	public int freeAdd(FreeVO freeVO) throws Exception{
-		Long categoryNum = freeVO.getCategoryNum();
+		//Long categoryNum = freeVO.getCategoryNum();
 		
 		
 		return freeDAO.freeAdd(freeVO);

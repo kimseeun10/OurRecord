@@ -24,17 +24,17 @@
 		<form action="freeAdd" method="post" enctype="multipart/form-data">
 			<br>
 		    <div class="mb-3">
-			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Category</label>
-			 <input type="hidden" class="form-control" name="categoryNum" id="categoryNum">
-			 <select>
+			 <label for="categoryNum" class="form-label" style="font-size: 15px; margin-right: 10px;">Category</label>
+			 <input type="hidden" class="form-control">
+			 <select class="form-control" name="categoryNum" id="">
 			 	<option value="#">-----선 택-----</option>
 			 	<c:forEach items="${cate}" var="cate">
-			 		<option value="${cate.categoryNum}">${cate.categoryName}</option>
+			 		<option value=${cate.categoryNum}>${cate.categoryName}</option>
 			 	</c:forEach>
 			 </select>
 		    </div>		    
 		    <div class="mb-3">
-			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
+			 <label for="freeTitle" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
 			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요.">
 		    </div>
 			<div class="mb-3">
@@ -43,7 +43,7 @@
 				<input type="text" class="form-control" id="name" value="${member.name}" readonly="readonly">
 			</div>
 			<div class="mb-3">
-				<label for="contents" class="form-label" style="font-size: 15px;">Contents</label>
+				<label for="freeContents" class="form-label" style="font-size: 15px;">Contents</label>
 				<textarea class="form-control" name="freeContents" id="freeContents" style="height: 200px;" placeholder="내용을 입력하세요."></textarea>
 			</div>
 				<label for="contents" class="form-label" style="font-size: 15px;">Files</label>

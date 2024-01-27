@@ -25,9 +25,11 @@
 	</select>
 
 	<select id="getFreeList" resultType="com.record.main.freeboard.FreeVO">
-		SELECT F.*, M.* 
+		SELECT F.*, M.*, C.*
 		FROM FREE F INNER JOIN MEMBER M
 		ON F.USERNO = M.USERNO
+		INNER JOIN CATEGORY C 
+		ON F.CATEGORYNUM = C.CATEGORYNUM
 		WHERE
 			<include refid="forPager"></include>
 			LIKE CONCAT('%', #{search}, '%')
@@ -53,11 +55,11 @@
 	</select>
 
 	<select id="freeDetail" resultType="com.record.main.freeboard.FreeVO">
-		SELECT F.*, M.name, C.*
+		SELECT F.*, M.NAME, C.*
 		FROM FREE F INNER JOIN MEMBER M
 		ON F.USERNO = M.USERNO
 		INNER JOIN CATEGORY C
-		ON F.CATEGORYNUM = C.CATECORYNUM
+		ON F.CATEGORYNUM = C.CATEGORYNUM
 		WHERE F.FREENUM = #{freeNum}
 	</select>
 
