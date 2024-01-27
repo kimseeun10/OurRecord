@@ -20,12 +20,12 @@
 <body>
 <c:import url="/WEB-INF/views/layout/topbar.jsp"></c:import>
 <section id="container" class="wrap">
-	<h1>공지사항</h1><br>
-		<form action="noticeUpdate" method="post" enctype="multipart/form-data">
-			<input type="hidden" id="noticeNo" name="noticeNo" value="${vo.noticeNo}">
+	<h1>COMMUNITY</h1><br>
+		<form action="freeUpdate" method="post" enctype="multipart/form-data">
+			<input type="hidden" id="freeNum" name="freeNum" value="${vo.freeNum}">
 		    <div class="mb-3">
-			 <label for="title" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
-			 <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력하세요." value="${vo.title}">
+			 <label for="freeTitle" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
+			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요." value="${vo.freeTitle}">
 		    </div>
 			<div class="mb-3">
 				<label for="name" class="form-label" style="font-size: 15px;">Writer</label>
@@ -33,8 +33,8 @@
 				<input type="text" class="form-control" id="name" value="${member.name}" readonly="readonly">
 			</div>
 			<div class="mb-3">
-				<label for="contents" class="form-label" style="font-size: 15px;">Contents</label>
-				<textarea class="form-control" name="contents" id="contents" style="height: 200px;">${vo.contents}</textarea>
+				<label for="freeContents" class="form-label" style="font-size: 15px;">Contents</label>
+				<textarea class="form-control" name="freeContents" id="freeContents" style="height: 200px;">${vo.freeContents}</textarea>
 			</div>
 				<label for="contents" class="form-label" style="font-size: 15px;">Files</label>
 					<div class="mb-3">

@@ -17,6 +17,7 @@ public class FreeVO {
 	private Date uploadDate;
 	private Date updateDate;
 	private Long hit;
+	private int anonymity;
 	
 	private String name;
 	private String categoryName;

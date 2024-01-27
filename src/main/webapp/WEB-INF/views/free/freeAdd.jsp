@@ -37,11 +37,14 @@
 			 <label for="freeTitle" class="form-label" style="font-size: 15px; margin-right: 10px;">Title</label>
 			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요.">
 		    </div>
-			<div class="mb-3">
-				<label for="name" class="form-label" style="font-size: 15px;">Writer</label>
-				<input type="hidden" class="form-control" name="userNo" id="userNo" value="${member.userNo}">
-				<input type="text" class="form-control" id="name" value="${member.name}" readonly="readonly">
-			</div>
+			익명 여부 <input type="checkbox" id="anonymity" name="anonymity" class="anonymityCheckbox" value="1">
+
+				<div class="mb-3" id="writerInfo">
+					<label for="name" class="form-label" style="font-size: 15px;">Writer</label>
+					<input type="hidden" class="form-control" name="userNo" id="userNo" value="${member.userNo}">
+					<input type="text" class="form-control" id="name" value="${member.name}" readonly="readonly">
+				</div>
+    
 			<div class="mb-3">
 				<label for="freeContents" class="form-label" style="font-size: 15px;">Contents</label>
 				<textarea class="form-control" name="freeContents" id="freeContents" style="height: 200px;" placeholder="내용을 입력하세요."></textarea>
@@ -52,6 +55,26 @@
 					</div>									  
 						<button class="btn btn-primary" id="addBtn" style="float: right;">작성완료</button>
 		   </form>
-	</section>	   
+	</section>	
+	
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        if ($("#anonymity").prop("checked")) {
+	            $("#writerInfo").hide();
+	            $("#userNo").val("8");
+	        }
+	
+	        $(".anonymityCheckbox").change(function () {
+	            if ($(this).prop("checked")) {
+	                $("#writerInfo").hide();
+	                $("#userNo").val("8"); 
+
+	            } else {
+	                $("#writerInfo").show();
+
+	            }
+	        });
+	    });
+	</script>   
 </body>
 </html>

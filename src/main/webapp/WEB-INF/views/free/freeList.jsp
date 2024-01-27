@@ -40,7 +40,12 @@
 					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeNum}</a></td>
 					<td>${vo.categoryName}</td>
 					<td><a href="./freeDetail?freeNum=${vo.freeNum}" style="color: #697a8d;">${vo.freeTitle}</a></td>
-					<td>${vo.name}</td>
+					<c:if test="${vo.anonymity != 1}">
+						<td>${vo.name}</td>
+					</c:if>
+					<c:if test="${vo.anonymity == 1}">
+						<td>익명</td>
+					</c:if>						
 					<c:if test="${empty vo.updateDate}">
 						<td>${vo.uploadDate}</td>
 					</c:if>
