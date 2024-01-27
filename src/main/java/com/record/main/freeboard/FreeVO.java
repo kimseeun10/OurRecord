@@ -18,6 +18,7 @@ public class FreeVO {
 	private Date updateDate;
 	private Long hit;
 	private int anonymity;
+	private String freePassword;
 	
 	private String name;
 	private String categoryName;

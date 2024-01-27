@@ -29,7 +29,7 @@
 			 <select class="form-control" name="categoryNum" id="">
 			 	<option value="#">-----선 택-----</option>
 			 	<c:forEach items="${cate}" var="cate">
-			 		<option value=${cate.categoryNum}>${cate.categoryName}</option>
+			 		<option value="${cate.categoryNum}">${cate.categoryName}</option>
 			 	</c:forEach>
 			 </select>
 		    </div>		    
@@ -38,6 +38,11 @@
 			 <input type="text" class="form-control" name="freeTitle" id="freeTitle" placeholder="제목을 입력하세요.">
 		    </div>
 			익명 여부 <input type="checkbox" id="anonymity" name="anonymity" class="anonymityCheckbox" value="1">
+
+			    <div id="passwordField" class="mb-3">
+			        <label for="freePassword" class="form-label">Password</label>
+			        <input type="password" class="form-control" id="freePassword" name="freePassword">
+			    </div>
 
 				<div class="mb-3" id="writerInfo">
 					<label for="name" class="form-label" style="font-size: 15px;">Writer</label>
@@ -59,7 +64,10 @@
 	
 	<script type="text/javascript">
 	    $(document).ready(function () {
+	    	$("#passwordField").hide();
+	    	
 	        if ($("#anonymity").prop("checked")) {
+	        	$("#passwordField").toggle($(this).prop("checked"));
 	            $("#writerInfo").hide();
 	            $("#userNo").val("8");
 	        }
@@ -68,9 +76,10 @@
 	            if ($(this).prop("checked")) {
 	                $("#writerInfo").hide();
 	                $("#userNo").val("8"); 
-
+	                $("#passwordField").toggle($(this).prop("checked"));
 	            } else {
 	                $("#writerInfo").show();
+	                $("#passwordField").hide();
 
 	            }
 	        });
