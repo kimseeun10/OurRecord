@@ -54,4 +54,13 @@ public class FreeController {
 		
 		return "redirect:./freeList";
 	}
+	
+	@GetMapping("freeUpdate")
+	public String freeUpdate(FreeVO freeVO) throws Exception{
+		freeVO = freeService.freeDetail(freeVO);
+		
+		return "free/freeUpdate";
+	}
+	
+	
 }
