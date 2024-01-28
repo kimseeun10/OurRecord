@@ -84,7 +84,9 @@
 			FREETITLE = #{freeTitle},
 			CATEGORYNUM = #{categoryNum},
 			UPDATEDATE = NOW(),
-			FREECONTENTS = #{freeContents}
+			FREECONTENTS = #{freeContents},
+			CATEGORYNUM = #{categoryNum},
+			ANONYMITY = #{anonymity}
 		WHERE FREENUM = #{freeNum}			
 	</update>	
 	

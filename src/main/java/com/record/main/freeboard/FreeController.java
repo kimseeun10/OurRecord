@@ -56,10 +56,29 @@ public class FreeController {
 	}
 	
 	@GetMapping("freeUpdate")
-	public String freeUpdate(FreeVO freeVO) throws Exception{
+	public String freeUpdate(FreeVO freeVO, Model model) throws Exception{
 		freeVO = freeService.freeDetail(freeVO);
+		List<FreeVO> cate = freeService.getCategoryList();
+		
+		model.addAttribute("cate", cate);
+		model.addAttribute("vo", freeVO);
 		
 		return "free/freeUpdate";
+	}
+	
+	@PostMapping("freeUpdate")
+	public String freeUpdate(FreeVO freeVO) throws Exception{
+		int result = freeService.freeUpdate(freeVO);
+		
+		
+		return "redirect:./freeDetail?freeNum="+freeVO.getFreeNum();
+	}
+	
+	@GetMapping("freeDelete")
+	public String freeDelete(FreeVO freeVO) throws Exception{
+		int result = freeService.freeDelete(freeVO);
+		
+		return "redirect:./freeList";
 	}
 	
 	
