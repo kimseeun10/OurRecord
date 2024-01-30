@@ -66,7 +66,7 @@
 	<update id="hitUpdate">
 		UPDATE FREE 
 		SET HIT = #{hit} + 1
-		WHERE FREENUM = #{freeNum}
+		WHERE FREENUM = #{freeNumd}
 	</update>
 	
 	<insert id="freeAdd" parameterType="com.record.main.freeboard.FreeVO">
